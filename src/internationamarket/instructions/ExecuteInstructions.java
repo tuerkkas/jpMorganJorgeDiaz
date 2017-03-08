@@ -111,8 +111,7 @@ public final class ExecuteInstructions {
 	private static void calculateInUsdSettled(String typeSetted,
 			List<Amount> amountList) {
 
-		// BigDecimal amount = new BigDecimal(0);
-
+		
 		List<Instruction> filterInstructions = instructionListSettleToday
 				.stream()
 				.filter(instruction -> instruction.getBuySell().equals(
@@ -158,11 +157,11 @@ public final class ExecuteInstructions {
 
 	private static void printAmountUsd() {
 
-		System.out.println("Amount USD incoming0"
+		System.out.println("Amount USD incoming: "
 				+ rankingAmountEntitiesIncoming.stream()
 						.map(f -> f.getAmount())
 						.reduce(BigDecimal.ZERO, BigDecimal::add));
-		System.out.println("Amount USD outcoming"
+		System.out.println("Amount USD outcoming: "
 				+ rankingAmountEntitiesOutcoming.stream()
 						.map(f -> f.getAmount())
 						.reduce(BigDecimal.ZERO, BigDecimal::add));
